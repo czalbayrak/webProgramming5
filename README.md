@@ -1,16 +1,22 @@
-# React + Vite
+# Homework 5 - Simple Product Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small React application built with Vite to practice components, props, state, events, list rendering and composition.
+## How to run
 
-Currently, two official plugins are available:
+npm install
+npm run dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## File Organization
 
-## React Compiler
+- 'src/main.jsx' - Entry point. Renders the 'App' component into the page.
+- 'src/App.jsx' - Root component. Holds the 'showProducts' and 'name' state, renders the heading the controlled name input, the greeting, the toggle button, and shows 'ProductList' only when 'showProducts' is true.
+- 'src/components/ProductList.jsx' - Defines the static product array abd renders one 'Product' per item using '.map()', with 'id' as the key.
+- 'src/components/Product.jsx' - Reusable, stateless component that displays a product's title and price using props, wrapped in 'Card'.
+- 'src/components/Card.jsx' - Layout component that renders any 'children' inside a styled box (border,padding,margin).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+##Challenges
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- After removing the default Vite files, 'main.jsx' still imported the deleted 'index.css' , which caused an import error. I fixed it by remoiving that import.
+- My files were not saved in Vs code , so the browser was running old code. I learned to save my files and turned on Auto save.
+- I got a blank page because I wrote '<div> style ={{...}}' instead of '<div style={{...}}>', and I used 'setProducts' instead of 'showProducts' in the button text.I fixed both after checking the code.
+- Understanding the difference between props and state, and making the input a controlled input.
